@@ -66,7 +66,14 @@ class HomePage extends StatelessWidget {
 
               // Botão
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MenuPrincipal(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   padding: const EdgeInsets.symmetric(
@@ -85,6 +92,168 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+class MenuPrincipal extends StatelessWidget {
+  const MenuPrincipal({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Menu')),
+      body: Center(
+        child: Container(
+          width: double.infinity,
+          child: Column(
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Aprender(),
+                      ),
+                    );
+                  },
+                style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+                child: const Text(
+                  "Vamos aprender!",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Quiz(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                child: const Text(
+                  "Teste seus Conhecimentos",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PrimeirosSocorros(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                child: const Text(
+                  "Primeiros Socorros",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Creditos(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                child: const Text(
+                  "Créditos e referências",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+class Aprender extends StatelessWidget {
+  const Aprender({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Aprender')),
+      body: Center(
+        child: Text('Aprender'),
+      ),
+    );
+  }
+}
+class Quiz extends StatelessWidget {
+  const Quiz({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Quiz')),
+      body: Center(
+        child: Text('Testando conhecimentos'),
+      ),
+    );
+  }
+}
+class PrimeirosSocorros extends StatelessWidget {
+  const PrimeirosSocorros({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Primeiros Socorros')),
+      body: Center(
+        child: Text('Primeiros Socorros'),
+      ),
+    );
+  }
+}
+class Creditos extends StatelessWidget {
+  const Creditos({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Creditos')),
+      body: Center(
+        child: Text('Creditos e referencias'),
       ),
     );
   }
