@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'aprender.dart';
+import 'quiz.dart';
+import 'primeiros_socorros.dart';
+import 'creditos.dart';
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -202,58 +208,6 @@ class MenuPrincipal extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-class Aprender extends StatelessWidget {
-  const Aprender({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Aprender')),
-      body: Center(
-        child: Text('Aprender'),
-      ),
-    );
-  }
-}
-class Quiz extends StatelessWidget {
-  const Quiz({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Quiz')),
-      body: Center(
-        child: Text('Testando conhecimentos'),
-      ),
-    );
-  }
-}
-class PrimeirosSocorros extends StatelessWidget {
-  const PrimeirosSocorros({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Primeiros Socorros')),
-      body: Center(
-        child: Text('Primeiros Socorros'),
-      ),
-    );
-  }
-}
-class Creditos extends StatelessWidget {
-  const Creditos({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Creditos')),
-      body: Center(
-        child: Text('Creditos e referencias'),
       ),
     );
   }
