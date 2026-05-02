@@ -107,7 +107,7 @@ class _QuizState extends State<Quiz> {
             children: [
               Text("Pergunta ${perguntaAtual + 1} de ${perguntas.length}",
                   style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-              Image.asset('gotinho2.png', height: 80),//Imagem do gotinho
+              Image.asset('assets/gotinho2.png', height: 80),//Imagem do gotinho
             ],
           ),
           const SizedBox(height: 10),
