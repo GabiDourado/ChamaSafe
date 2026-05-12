@@ -64,6 +64,8 @@ flutter:
     - assets/gotinho2.png
     - assets/gotinhofeliz.png
     - assets/gotinho3.png
+    - assets/Ciencia_da_Computacao.jpg
+    - assets/extensao.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
