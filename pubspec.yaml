@@ -66,6 +66,20 @@ flutter:
     - assets/gotinho3.png
     - assets/Ciencia_da_Computacao.jpg
     - assets/extensao.jpg
+    - assets/atencao.png
+    - assets/cuida_da_queimadura.png
+    - assets/fogo_quente.png
+    - assets/nao_faca_isso.png
+    - assets/objeto_quente.png
+    - assets/panela_quente.png
+    - assets/sol_forte.png
+    - assets/tarefa_concluida.png
+    - assets/primeiro_grau.png
+    - assets/segundo_grau.png
+    - assets/terceiro_grau.png
+    - assets/agua_fria.png
+    - assets/primeiros_socorros.png
+    - assets/curativos.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
