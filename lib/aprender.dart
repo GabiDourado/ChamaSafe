@@ -119,7 +119,7 @@ class _AprenderState extends State<Aprender> {
     }
   }
 
-//Widgets auxiliares
+//Widgets auxiliaress
   Widget itemTexto(String texto) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
