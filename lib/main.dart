@@ -199,7 +199,7 @@ class MenuPrincipal extends StatelessWidget {
                 "Créditos e referências",
                 Icons.star_rounded,
                 Colors.orange,
-                const Creditos(),
+                const MenuInfo(),
               ),
             ],
           ),

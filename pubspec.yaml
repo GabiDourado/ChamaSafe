@@ -37,6 +37,9 @@ dependencies:
   google_fonts: ^8.0.2
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.3
+  flutter_native_splash: ^2.4.6
+  url_launcher: ^6.3.0
   flutter_test:
     sdk: flutter
 
@@ -80,6 +83,7 @@ flutter:
     - assets/agua_fria.png
     - assets/primeiros_socorros.png
     - assets/curativos.png
+    - assets/gotinhoamor.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -105,3 +109,26 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/splash/splash.jpg
+
+  android: true
+  ios: true
+  android_12:
+    color: "#FFFFFF"
+    image: assets/splash/splash.jpg
+
+# Se ocorrer qualquer erro, rodar no terminal:
+# flutter pub get
+# dart run flutter_launcher_icons
+# dart run flutter_native_splash:create
+# E se o ícone ou o splash não for alterado:
+# flutter clean
+# e depois:
+# flutter run
