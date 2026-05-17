@@ -69,6 +69,17 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFDF5E6),
+      bottomNavigationBar: Container(
+        color: const Color(0xFFFFF3E0),
+        padding: const EdgeInsets.all(12),
+        child: const Text(
+          "© 2026 UNISAGRADO",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.brown,
+          ),
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.orange,
         centerTitle: true,

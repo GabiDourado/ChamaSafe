@@ -8,6 +8,17 @@ class MenuInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFFF3E0),
+      bottomNavigationBar: Container(
+        color: const Color(0xFFFFF3E0),
+        padding: const EdgeInsets.all(12),
+        child: const Text(
+          "© 2026 UNISAGRADO",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.brown,
+          ),
+        ),
+      ),
       appBar: AppBar(
         title: const Text("Créditos e referências", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
         backgroundColor: Colors.orange,
@@ -74,6 +85,17 @@ class Creditos extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
+      bottomNavigationBar: Container(
+        color: const Color(0xFFFFF3E0),
+        padding: const EdgeInsets.all(12),
+        child: const Text(
+          "© 2026 UNISAGRADO",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.brown,
+          ),
+        ),
+      ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -83,7 +105,7 @@ class Creditos extends StatelessWidget {
                   "Disciplina:",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(height: 10),
                 const Text(
                   "Desenvolvimento de software",
                   style: TextStyle(fontSize: 20, color: Colors.brown),
@@ -93,7 +115,7 @@ class Creditos extends StatelessWidget {
                   "Professor:",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(height: 10),
                 const Text(
                   "Prof. Dr. Elvio Gilberto da Silva",
                   style: TextStyle(fontSize: 20, color: Colors.brown),
@@ -103,7 +125,7 @@ class Creditos extends StatelessWidget {
                   "Equipe:",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(height: 10),
                 const Text(
                   "Eduardo Merlin Simão",
                   style: TextStyle(fontSize: 20, color: Colors.brown),
@@ -155,6 +177,17 @@ class Refs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFFF3E0),
+      bottomNavigationBar: Container(
+        color: const Color(0xFFFFF3E0),
+        padding: const EdgeInsets.all(12),
+        child: const Text(
+          "© 2026 UNISAGRADO",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.brown,
+          ),
+        ),
+      ),
       appBar: AppBar(title: const Text('Referências', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
         backgroundColor: Colors.orange,
         centerTitle: true,
@@ -165,27 +198,98 @@ class Refs extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-
-            TextButton(
-              onPressed: () {
-                abrirLink('https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiTtOu-paeUAxU7kZUCHY6rEoIQFnoECCEQAQ&url=https%3A%2F%2Fbvsms.saude.gov.br%2Fqueimaduras%2F&usg=AOvVaw3SkxxpxrO4jnckyBNKAwLT&opi=89978449');
-              },
-              child: const Text("Biblioteca Virtual em Saúde - Ministério da Saúde",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-      ),
-            ),
-            const SizedBox(width: 10),
-            TextButton(
-              onPressed: () {
-                abrirLink('https://hospitalsaocamilosp.org.br/queimaduras-recomendacoes-e-como-prevenir/');
-              },
-              child: const Text("Hospital São Camilo",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-            ),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          child:  Column(
+            children: [
+              const Text(
+                "Fontes do conteúdo do app:",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange),
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  abrirLink('https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiTtOu-paeUAxU7kZUCHY6rEoIQFnoECCEQAQ&url=https%3A%2F%2Fbvsms.saude.gov.br%2Fqueimaduras%2F&usg=AOvVaw3SkxxpxrO4jnckyBNKAwLT&opi=89978449');
+                },
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(child:
+                      Text("Biblioteca Virtual em Saúde - Ministério da Saúde",
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
+                        textAlign: TextAlign.center,
+                    ),
+                    ),
+                    SizedBox(width: 10),
+                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  abrirLink('https://hospitalsaocamilosp.org.br/queimaduras-recomendacoes-e-como-prevenir/');
+                },
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(child:
+                      Text("Hospital São Camilo",
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 50),
+              const Text(
+                "IAs utilizadas para geração de imagens e adaptação textual:",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  abrirLink('https://chatgpt.com/');
+                },
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(child:
+                      Text("ChatGPT",
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  abrirLink('https://gemini.google.com');
+                },
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(child:
+                      Text("Gemini",
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

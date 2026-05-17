@@ -147,6 +147,17 @@ class MenuPrincipal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFFF3E0),
+      bottomNavigationBar: Container(
+        color: const Color(0xFFFFF3E0),
+        padding: const EdgeInsets.all(12),
+        child: const Text(
+          "© 2026 UNISAGRADO",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.brown,
+          ),
+        ),
+      ),
       appBar: AppBar(
         title: const Text('Menu Principal', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
         backgroundColor: Colors.orange,
