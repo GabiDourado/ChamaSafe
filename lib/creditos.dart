@@ -225,6 +225,24 @@ class Refs extends StatelessWidget {
                   ],
                 ),
               ),
+              TextButton(
+                onPressed: () {
+                  abrirLink('https://eurofarma.com.br/artigos/primeiros-socorros-entenda-como-proceder-em-caso-de-queimaduras');
+                },
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(child:
+                    Text("Eurofarma - Primeiros socorros: entenda como proceder em caso de queimaduras",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
+                      textAlign: TextAlign.center,
+                    ),
+                    ),
+                    SizedBox(width: 10),
+                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
+                  ],
+                ),
+              ),
               const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
@@ -238,6 +256,24 @@ class Refs extends StatelessWidget {
                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
                         textAlign: TextAlign.center,
                       ),
+                    ),
+                    SizedBox(width: 10),
+                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
+                  ],
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  abrirLink('https://www.institutosc.com.br/web/blog/primeiros-socorros-queimadura');
+                },
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(child:
+                    Text("Instituto Santa Catarina - Primeiros socorros para queimadura: o que fazer em emergências",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
+                      textAlign: TextAlign.center,
+                    ),
                     ),
                     SizedBox(width: 10),
                     Icon(Icons.open_in_new, size: 20, color: Colors.brown,),

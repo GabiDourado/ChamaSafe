@@ -19,23 +19,14 @@ class _AprenderState extends State<Aprender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFDF5E6),
-      bottomNavigationBar: Container(
-        color: const Color(0xFFFFF3E0),
-        padding: const EdgeInsets.all(12),
-        child: const Text(
-          "© 2026 UNISAGRADO",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.brown,
-          ),
-        ),
-      ),
       appBar: AppBar(
+        title: const Text(
+          'Vamos Aprender!',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
         backgroundColor: Colors.orange,
-        title: const Text('Vamos Aprender!',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         centerTitle: true,
+        elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
@@ -47,7 +38,30 @@ class _AprenderState extends State<Aprender> {
           },
         ),
       ),
-      body: _construirCorpo(),
+      bottomNavigationBar: Container(
+        color: const Color(0xFFFFE0B2),
+        padding: const EdgeInsets.all(12),
+        child: const Text(
+          "© 2026 UNISAGRADO",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.brown,
+          ),
+        ),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFFFFF3E0),
+              Color(0xFFFFE0B2),
+            ],
+          ),
+        ),
+        child: _construirCorpo(),
+      ),
     );
   }
 
@@ -61,17 +75,16 @@ class _AprenderState extends State<Aprender> {
           [
             itemImagem('assets/atencao.png'),
             itemTexto("Queimaduras são lesões causadas por contato direto com alguma fonte de calor."),
-            const Divider(),
-            itemTexto("Tipos de Queimaduras:"),
-            itemTexto("• Térmicas: Fogo, vapor, objetos quentes ou pelo sol."),
+            const Divider(height: 30),
+            itemTexto("• Queimaduras térmicas: Provocadas por fogo, vapor, objetos quentes ou pelo sol."),
             itemImagem('assets/sol_forte.png', altura: 80),
-            itemTexto("• Químicas: Substâncias que queimam a pele."),
-            itemTexto("• Elétricas: Descargas elétricas e fios desencapados."),
-            const Divider(),
-            itemTexto("Graus de Queimadura:"),
-            itemTexto("1 grau: Atinge as primeiras camadas da pele. Causa inchaço e vermelhidão."),
+            itemTexto("• Queimaduras químicas: Substâncias que queimam ao entrar em contato com a pele."),
+            itemTexto("• Queimaduras elétricas: Causadas por descargas elétricas e fios desencapados."),
+            const Divider(height: 30),
+            itemTextoDestaque("Graus de Queimadura:"),
+            itemTexto("1 grau: Atingem as primeiras camadas da pele. Causam inchaço e vermelhidão."),
             itemImagem('assets/primeiro_grau.png', altura: 90),
-            itemTexto("2 grau: Atinge camadas mais profundas. Pode destruir tecidos e glândulas."),
+            itemTexto("2 grau: Atinge camadas mais profundas. Destrói tecidos e pode causar bolhas e cicatrizes."),
             itemImagem('assets/segundo_grau.png', altura: 90),
             itemTexto("3 grau: Atinge todas as camadas da pele e pode chegar ao osso."),
             itemImagem('assets/terceiro_grau.png', altura: 90),
@@ -84,12 +97,12 @@ class _AprenderState extends State<Aprender> {
             itemImagem('assets/tarefa_concluida.png'),
             itemTexto("• Nunca deixe panelas com cabos voltados para fora do fogão."),
             itemTexto("• Verifique se as panelas estão quentes antes de tocar."),
-            const Divider(),
-            itemTexto("• Deixe velas longe de tecidos e cortinas."),
+            const Divider(height: 30),
+            itemTexto("• Deixe velas longe de tecidos e objetos inflamáveis."),
             itemTexto("• Fique longe de fósforos, álcool e produtos de limpeza."),
             itemImagem('assets/atencao.png', altura: 80),
-            itemTexto("• Não mexa em fios elétricos e não toque em tomadas."),
-            itemTexto("• Use sempre protetor solar e roupas que protejam do sol."),
+            itemTexto("• Não mexa in fios elétricos e não toque em tomadas."),
+            itemTexto("• Use protetor solar e roupas que protejam do sol."),
           ],
         );
       case 3:
@@ -97,15 +110,15 @@ class _AprenderState extends State<Aprender> {
           "O que causa",
           [
             itemImagem('assets/fogo_quente.png'),
-            itemTexto("Causas comuns de acidentes:"),
+            itemTextoDestaque("Causas comuns de acidentes:"),
             itemTexto("• Encostar em panelas quentes ou água fervendo."),
-            itemImagem('assets/panela_quente.png', altura: 90),
-            itemTexto("• Exposição ao sol sem proteção e vapores quentes."),
-            itemTexto("• Frio extremo ou fricção forte na pele."),
-            const Divider(),
-            itemTexto("• Contato com águas-vivas, taturanas ou urtigas."),
-            itemImagem('assets/objeto_quente.png', altura: 90),
+            itemImagem('assets/panela_quente.png', altura: 80),
+            itemTexto("• Exposição prolongada ao sol sem proteção."),
+            itemTexto("• Vapores quentes, frio extremo ou fricção forte na pele."),
+            const Divider(height: 30),
+            itemTexto("• Contato com águas-vivas (caravelas), taturanas ou urtigas."),
             itemTexto("• Misturar produtos de limpeza ou agentes químicos."),
+            itemImagem('assets/objeto_quente.png', altura: 80),
           ],
         );
       case 4:
@@ -113,16 +126,16 @@ class _AprenderState extends State<Aprender> {
           "O que fazer",
           [
             itemImagem('assets/primeiros_socorros.png'),
-            itemTexto("1. Coloque a área queimada em água corrente fria por 10 minutos."),
-            itemImagem('assets/agua_fria.png', altura: 90),
-            itemTexto("2. Se houver sujeira, cubra com um pano limpo e úmido."),
-            const Divider(),
-            itemTexto("O que NUNCA fazer:"),
+            itemTexto("1. Coloque a parte queimada em água corrente fria por 10 minutos."),
+            itemImagem('assets/agua_fria.png', altura: 80),
+            itemTexto("2. Se houver sujeira no local, cubra com um pano limpo e úmido."),
+            const Divider(height: 30),
+            itemTextoDestaque("O que NUNCA fazer:"),
             itemImagem('assets/nao_faca_isso.png'),
-            itemTexto("• Nunca retire corpos estranhos ou graxa do local."),
-            itemTexto("• Não passe manteiga, pó de café ou creme dental."),
-            itemImagem('assets/curativos.png', altura: 90),
-            itemTexto("• Nunca fure bolhas ou puxe as peles soltas."),
+            itemTexto("• Nunca retire corpos estranhos ou graxa do local queimado."),
+            itemTexto("• Não coloque manteiga, pó de café, creme dental ou qualquer outra substância."),
+            itemImagem('assets/curativos.png', altura: 80),
+            itemTexto("• Nunca fure as bolhas e nunca puxe as peles que estão soltas."),
           ],
         );
       default:
@@ -130,7 +143,8 @@ class _AprenderState extends State<Aprender> {
     }
   }
 
-//Widgets auxiliaress
+  //widgets auxiliares de estilo
+
   Widget itemTexto(String texto) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
@@ -140,6 +154,22 @@ class _AprenderState extends State<Aprender> {
           fontSize: 16,
           height: 1.5,
           color: Color(0xFF4E342E),
+          fontWeight: FontWeight.w500,
+        ),
+        textAlign: TextAlign.left,
+      ),
+    );
+  }
+
+  Widget itemTextoDestaque(String texto) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Text(
+        texto,
+        style: const TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: Colors.orange,
         ),
         textAlign: TextAlign.left,
       ),
@@ -148,7 +178,7 @@ class _AprenderState extends State<Aprender> {
 
   Widget itemImagem(String path, {double altura = 130}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Center(
         child: Image.asset(
           path,
@@ -162,34 +192,50 @@ class _AprenderState extends State<Aprender> {
   Widget menuAprender() {
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Image.asset('assets/Gotinho.png', height: 160),
-            const SizedBox(height: 30),
-            botaoMenu("O que é e tipos", 1),
-            botaoMenu("Como prevenir", 2),
-            botaoMenu("O que causa", 3),
-            botaoMenu("O que fazer", 4),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/Gotinho.png',
+                height: 180,
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                "Escolha um assunto:",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange),
+              ),
+              const SizedBox(height: 30),
+              _botaoMenuInterno("O que é e tipos", Icons.menu_book_rounded, Colors.green, 1),
+              _botaoMenuInterno("Como prevenir", Icons.shield_rounded, Colors.green, 2),
+              _botaoMenuInterno("O que causa", Icons.gavel_rounded, Colors.green, 3),
+              _botaoMenuInterno("O que fazer", Icons.health_and_safety_rounded, Colors.green, 4),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget botaoMenu(String texto, int index) {
+  Widget _botaoMenuInterno(String texto, IconData icone, Color cor, int destinoIndex) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
-      child: ElevatedButton(
-        onPressed: () => mudarTela(index),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.green,
-          padding: const EdgeInsets.symmetric(vertical: 15),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: SizedBox(
+        width: double.infinity,
+        height: 60,
+        child: ElevatedButton.icon(
+          onPressed: () => mudarTela(destinoIndex),
+          icon: Icon(icone, color: Colors.white, size: 28),
+          label: Text(
+            texto,
+            style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: cor,
+            elevation: 3,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          ),
         ),
-        child: Text(texto, style: const TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
   }
@@ -201,24 +247,27 @@ class _AprenderState extends State<Aprender> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(titulo,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange)),
+            Text(
+              titulo,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.orange,
+                  letterSpacing: 1),
+            ),
             const SizedBox(height: 15),
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(25),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                color: Colors.white.withOpacity(0.95),
+                borderRadius: BorderRadius.circular(35),
                 border: Border.all(color: Colors.orange.shade100, width: 2),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
+                    color: Colors.black.withOpacity(0.08),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
                   )
                 ],
               ),
@@ -228,14 +277,21 @@ class _AprenderState extends State<Aprender> {
               ),
             ),
             const SizedBox(height: 25),
-            ElevatedButton(
-              onPressed: () => mudarTela(0),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            SizedBox(
+              height: 55,
+              child: ElevatedButton.icon(
+                onPressed: () => mudarTela(0),
+                icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+                label: const Text(
+                  "Voltar ao Menu",
+                  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                ),
               ),
-              child: const Text("Voltar ao Menu", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
             )
           ],
         ),
