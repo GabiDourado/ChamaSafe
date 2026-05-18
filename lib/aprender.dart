@@ -19,6 +19,7 @@ class _AprenderState extends State<Aprender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFFF3E0),
       appBar: AppBar(
         title: const Text(
           'Vamos Aprender!',
@@ -39,7 +40,7 @@ class _AprenderState extends State<Aprender> {
         ),
       ),
       bottomNavigationBar: Container(
-        color: const Color(0xFFFFE0B2),
+        color: const Color(0xFFFFF3E0),
         padding: const EdgeInsets.all(12),
         child: const Text(
           "© 2026 UNISAGRADO",
@@ -50,16 +51,6 @@ class _AprenderState extends State<Aprender> {
         ),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFFFFF3E0),
-              Color(0xFFFFE0B2),
-            ],
-          ),
-        ),
         child: _construirCorpo(),
       ),
     );
@@ -73,34 +64,34 @@ class _AprenderState extends State<Aprender> {
         return telaConteudo(
           "O que é e tipos de queimadura",
           [
-            itemImagem('assets/atencao.png'),
+            itemImagem('assets/atencao.png', largura: 120),
             itemTexto("Queimaduras são lesões causadas por contato direto com alguma fonte de calor."),
             const Divider(height: 30),
             itemTexto("• Queimaduras térmicas: Provocadas por fogo, vapor, objetos quentes ou pelo sol."),
-            itemImagem('assets/sol_forte.png', altura: 80),
+            itemImagem('assets/sol_forte.png', largura: 100),
             itemTexto("• Queimaduras químicas: Substâncias que queimam ao entrar em contato com a pele."),
             itemTexto("• Queimaduras elétricas: Causadas por descargas elétricas e fios desencapados."),
             const Divider(height: 30),
             itemTextoDestaque("Graus de Queimadura:"),
             itemTexto("1 grau: Atingem as primeiras camadas da pele. Causam inchaço e vermelhidão."),
-            itemImagem('assets/primeiro_grau.png', altura: 90),
+            itemImagem('assets/primeiro_grau.png', largura: 120),
             itemTexto("2 grau: Atinge camadas mais profundas. Destrói tecidos e pode causar bolhas e cicatrizes."),
-            itemImagem('assets/segundo_grau.png', altura: 90),
+            itemImagem('assets/segundo_grau.png', largura: 120),
             itemTexto("3 grau: Atinge todas as camadas da pele e pode chegar ao osso."),
-            itemImagem('assets/terceiro_grau.png', altura: 90),
+            itemImagem('assets/terceiro_grau.png', largura: 120),
           ],
         );
       case 2:
         return telaConteudo(
           "Como prevenir",
           [
-            itemImagem('assets/tarefa_concluida.png'),
+            itemImagem('assets/tarefa_concluida.png', largura: 120),
             itemTexto("• Nunca deixe panelas com cabos voltados para fora do fogão."),
             itemTexto("• Verifique se as panelas estão quentes antes de tocar."),
             const Divider(height: 30),
             itemTexto("• Deixe velas longe de tecidos e objetos inflamáveis."),
             itemTexto("• Fique longe de fósforos, álcool e produtos de limpeza."),
-            itemImagem('assets/atencao.png', altura: 80),
+            itemImagem('assets/atencao.png', largura: 120),
             itemTexto("• Não mexa in fios elétricos e não toque em tomadas."),
             itemTexto("• Use protetor solar e roupas que protejam do sol."),
           ],
@@ -109,32 +100,32 @@ class _AprenderState extends State<Aprender> {
         return telaConteudo(
           "O que causa",
           [
-            itemImagem('assets/fogo_quente.png'),
+            itemImagem('assets/fogo_quente.png', largura: 110),
             itemTextoDestaque("Causas comuns de acidentes:"),
             itemTexto("• Encostar em panelas quentes ou água fervendo."),
-            itemImagem('assets/panela_quente.png', altura: 80),
+            itemImagem('assets/panela_quente.png', largura: 110),
             itemTexto("• Exposição prolongada ao sol sem proteção."),
             itemTexto("• Vapores quentes, frio extremo ou fricção forte na pele."),
             const Divider(height: 30),
             itemTexto("• Contato com águas-vivas (caravelas), taturanas ou urtigas."),
             itemTexto("• Misturar produtos de limpeza ou agentes químicos."),
-            itemImagem('assets/objeto_quente.png', altura: 80),
+            itemImagem('assets/objeto_quente.png', largura: 110),
           ],
         );
       case 4:
         return telaConteudo(
           "O que fazer",
           [
-            itemImagem('assets/primeiros_socorros.png'),
+            itemImagem('assets/primeiros_socorros.png', largura: 100),
             itemTexto("1. Coloque a parte queimada em água corrente fria por 10 minutos."),
-            itemImagem('assets/agua_fria.png', altura: 80),
+            itemImagem('assets/agua_fria.png', largura: 100),
             itemTexto("2. Se houver sujeira no local, cubra com um pano limpo e úmido."),
             const Divider(height: 30),
             itemTextoDestaque("O que NUNCA fazer:"),
-            itemImagem('assets/nao_faca_isso.png'),
+            itemImagem('assets/nao_faca_isso.png', largura: 120),
             itemTexto("• Nunca retire corpos estranhos ou graxa do local queimado."),
             itemTexto("• Não coloque manteiga, pó de café, creme dental ou qualquer outra substância."),
-            itemImagem('assets/curativos.png', altura: 80),
+            itemImagem('assets/curativos.png', largura: 100),
             itemTexto("• Nunca fure as bolhas e nunca puxe as peles que estão soltas."),
           ],
         );
@@ -176,13 +167,13 @@ class _AprenderState extends State<Aprender> {
     );
   }
 
-  Widget itemImagem(String path, {double altura = 130}) {
+  Widget itemImagem(String path, {double largura = 150}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Center(
         child: Image.asset(
           path,
-          height: altura,
+          width: largura,
           fit: BoxFit.contain,
         ),
       ),
@@ -190,15 +181,14 @@ class _AprenderState extends State<Aprender> {
   }
 
   Widget menuAprender() {
-    return Center(
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           child: Column(
             children: [
               Image.asset(
-                'assets/Gotinho.png',
-                height: 180,
+                'assets/gotinhoaprender.png',
+                width: 180,
               ),
               const SizedBox(height: 10),
               const Text(
@@ -207,13 +197,12 @@ class _AprenderState extends State<Aprender> {
               ),
               const SizedBox(height: 30),
               _botaoMenuInterno("O que é e tipos", Icons.menu_book_rounded, Colors.green, 1),
-              _botaoMenuInterno("Como prevenir", Icons.shield_rounded, Colors.green, 2),
-              _botaoMenuInterno("O que causa", Icons.gavel_rounded, Colors.green, 3),
-              _botaoMenuInterno("O que fazer", Icons.health_and_safety_rounded, Colors.green, 4),
+              _botaoMenuInterno("Como prevenir", Icons.shield_rounded, Colors.blue, 2),
+              _botaoMenuInterno("O que causa", Icons.gavel_rounded, Colors.red, 3),
+              _botaoMenuInterno("O que fazer", Icons.health_and_safety_rounded, Colors.orange, 4),
             ],
           ),
         ),
-      ),
     );
   }
 

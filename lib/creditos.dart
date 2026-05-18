@@ -197,7 +197,7 @@ class Refs extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           child:  Column(
@@ -207,78 +207,31 @@ class Refs extends StatelessWidget {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange),
               ),
               const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  abrirLink('https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiTtOu-paeUAxU7kZUCHY6rEoIQFnoECCEQAQ&url=https%3A%2F%2Fbvsms.saude.gov.br%2Fqueimaduras%2F&usg=AOvVaw3SkxxpxrO4jnckyBNKAwLT&opi=89978449');
-                },
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Flexible(child:
-                      Text("Biblioteca Virtual em Saúde - Ministério da Saúde",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-                        textAlign: TextAlign.center,
-                    ),
-                    ),
-                    SizedBox(width: 10),
-                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
-                  ],
-                ),
+              _buildRefCard(
+                titulo: "Biblioteca Virtual em Saúde - Ministério da Saúde",
+                subtitulo: "Acesse o portal oficial de saúde",
+                onTap: () => abrirLink('https://bvsms.saude.gov.br/queimaduras/'),
               ),
-              TextButton(
-                onPressed: () {
-                  abrirLink('https://eurofarma.com.br/artigos/primeiros-socorros-entenda-como-proceder-em-caso-de-queimaduras');
-                },
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Flexible(child:
-                    Text("Eurofarma - Primeiros socorros: entenda como proceder em caso de queimaduras",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-                      textAlign: TextAlign.center,
-                    ),
-                    ),
-                    SizedBox(width: 10),
-                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
-                  ],
-                ),
+              const SizedBox(height: 12),
+
+              _buildRefCard(
+                titulo: "Eurofarma - Primeiros socorros",
+                subtitulo: "Acesse e entenda como proceder em caso de queimaduras",
+                onTap: () => abrirLink('https://eurofarma.com.br/artigos/primeiros-socorros-entenda-como-proceder-em-caso-de-queimaduras'),
               ),
-              const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  abrirLink('https://hospitalsaocamilosp.org.br/queimaduras-recomendacoes-e-como-prevenir/');
-                },
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Flexible(child:
-                      Text("Hospital São Camilo",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
-                  ],
-                ),
+              const SizedBox(height: 12),
+
+              _buildRefCard(
+                titulo: "Hospital São Camilo",
+                subtitulo: "Acesse as recomendações e prevenções",
+                onTap: () => abrirLink('https://hospitalsaocamilosp.org.br/queimaduras-recomendacoes-e-como-prevenir/'),
               ),
-              TextButton(
-                onPressed: () {
-                  abrirLink('https://www.institutosc.com.br/web/blog/primeiros-socorros-queimadura');
-                },
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Flexible(child:
-                    Text("Instituto Santa Catarina - Primeiros socorros para queimadura: o que fazer em emergências",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-                      textAlign: TextAlign.center,
-                    ),
-                    ),
-                    SizedBox(width: 10),
-                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
-                  ],
-                ),
+              const SizedBox(height: 12),
+
+              _buildRefCard(
+                titulo: "Instituto Santa Catarina - Primeiros Socorros",
+                subtitulo: "O que fazer em emergências",
+                onTap: () => abrirLink('https://www.institutosc.com.br/web/blog/primeiros-socorros-queimadura'),
               ),
               const SizedBox(height: 50),
               const Text(
@@ -287,42 +240,69 @@ class Refs extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  abrirLink('https://chatgpt.com/');
-                },
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
+              _buildRefCard(
+                titulo: "ChatGPT",
+                subtitulo: "Geração de imagens e adaptação textual",
+                onTap: () => abrirLink('https://chatgpt.com/'),
+              ),
+              const SizedBox(height: 12),
+              _buildRefCard(
+                titulo: "Gemini",
+                subtitulo: "Geração de imagens e adaptação textual",
+                onTap: () => abrirLink('https://gemini.google.com'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  Widget _buildRefCard({
+    required String titulo,
+    required String subtitulo,
+    required VoidCallback onTap,
+  }) {
+    return Card(
+      elevation: 2,
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Flexible(child:
-                      Text("ChatGPT",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-                        textAlign: TextAlign.center,
+                    Text(
+                      titulo,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF4E342E),
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
+                    const SizedBox(height: 4),
+                    Text(
+                      subtitulo,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: Color(0xFF8D6E63),
+                      ),
+                    ),
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {
-                  abrirLink('https://gemini.google.com');
-                },
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Flexible(child:
-                      Text("Gemini",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.brown),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    Icon(Icons.open_in_new, size: 20, color: Colors.brown,),
-                  ],
-                ),
+              const SizedBox(width: 12),
+              const Icon(
+                Icons.open_in_new,
+                size: 18,
+                color: Colors.brown,
               ),
             ],
           ),

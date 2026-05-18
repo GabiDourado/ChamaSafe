@@ -102,7 +102,7 @@ class _PrimeirosSocorrosState extends State<PrimeirosSocorros> {
   // parte do passo a passo
   List<Widget> _conteudoPassoAPasso() {
     return [
-      itemImagem('assets/primeiros_socorros.png'),
+      itemImagem('assets/primeiros_socorros.png', largura: 110),
       const Text(
         "O que fazer imediatamente:",
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange),
@@ -110,29 +110,29 @@ class _PrimeirosSocorrosState extends State<PrimeirosSocorros> {
       const SizedBox(height: 15),
       itemTexto("Resfrie:"),
       itemTexto("Coloque a queimadura debaixo de água corrente e fria por pelo menos 10 a 20 minutos. Nunca use gelo, pois ele pode causar mais danos ao tecido."),
-      itemImagem('assets/agua_fria.png', altura: 80),
+      itemImagem('assets/agua_fria.png', largura: 110),
       const Divider(),
       itemTexto("Remova acessórios:"),
       itemTexto("Tire anéis, pulseiras, relógios e roupas antes que a pele comece a inchar. Se alguma roupa estiver grudada, deixe-a no lugar e corte o tecido ao redor."),
-      itemImagem('assets/objeto_quente.png', altura: 80),
+      itemImagem('assets/objeto_quente.png', largura: 110),
       const Divider(),
       itemTexto("Proteja:"),
       itemTexto("Cubra a área com um pano limpo, seco e que não solte fiapos, ou use uma gaze."),
-      itemImagem('assets/curativos.png', altura: 80),
+      itemImagem('assets/curativos.png', largura: 110),
     ];
   }
 
   // parte da emergencia
   List<Widget> _conteudoEmergencia() {
     return [
-      itemImagem('assets/atencao.png'),
+      itemImagem('assets/atencao.png', largura: 110),
       const Text(
         "Ligue para o SAMU (192) ou Corpo de Bombeiros (193) se:",
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.redAccent),
       ),
       const SizedBox(height: 15),
       itemTexto("• A queimadura for extensa ou profunda (atingir camadas mais grossas da pele, ficando esbranquiçada ou carbonizada)."),
-      itemImagem('assets/nao_faca_isso.png', altura: 80),
+      itemImagem('assets/nao_faca_isso.png', largura: 110),
       const Divider(),
       itemTexto("• Atingir o rosto, mãos, pés, articulações ou genitais."),
       itemTexto("• For causada por produtos químicos ou corrente elétrica."),
@@ -157,13 +157,13 @@ class _PrimeirosSocorrosState extends State<PrimeirosSocorros> {
     );
   }
 
-  Widget itemImagem(String path, {double altura = 130}) {
+  Widget itemImagem(String path, {double largura = 130}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Center(
         child: Image.asset(
           path,
-          height: altura,
+          width: largura,
           fit: BoxFit.contain,
         ),
       ),

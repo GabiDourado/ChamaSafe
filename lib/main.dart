@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 import 'aprender.dart';
 import 'quiz.dart';
 import 'primeiros_socorros.dart';
@@ -29,111 +30,183 @@ class HomePage extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFFFFF3E0),
-              Color(0xFFFFE0B2),
+              Color(0xFFFFF8ED),
+              Color(0xFFFFD89A),
             ],
           ),
         ),
         child: Stack(
-          children: [
-            Center(
-              child: Container(
-                width: 340,
-                padding: const EdgeInsets.all(25),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(35),
-
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 20,
-                      offset: const Offset(0, 10), // Sombra para baixo
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    RichText(
-                      textAlign: TextAlign.center,
-                      text: const TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "FOGO?\n",
-                            style: TextStyle(
-                              fontSize: 42,
-                              fontWeight: FontWeight.w900,
-                              color: Color(0xFFFF9800),
-                              letterSpacing: 1.5,
-                            ),
-                          ),
-                          TextSpan(
-                            text: "NÃO!",
-                            style: TextStyle(
-                              fontSize: 38,
-                              fontWeight: FontWeight.w900,
-                              color: Color(0xFF1E88E5),
-                              letterSpacing: 1.5,
-
-                              shadows: [
-                                Shadow(color: Colors.black26, offset: Offset(2, 2), blurRadius: 2),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 25),
-
-                    // IMAGEM DO GOTINHO
-                    Image.asset(
-                      'assets/Gotinho.png',
-                      height: 320,
-                    ),
-
-                    const SizedBox(height: 30),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const MenuPrincipal()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF4CAF50),
-                          elevation: 8,
-                          shadowColor: Colors.green.withOpacity(0.5),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+          children:[
+            Positioned(
+              top: 200,
+              left: 70,
+              child: Icon(
+                Icons.water_drop,
+                color: Color(0xFF6EC6FF),
+                size: 24,
+              ),
+            ),
+            Positioned(
+              top: 260,
+              right: 50,
+              child: Icon(
+                Icons.water_drop,
+                color: Color(0xFF6EC6FF),
+                size: 20,
+              ),
+            ),
+            Positioned(
+              bottom: 230,
+              left: 60,
+              child: Icon(
+                Icons.water_drop,
+                color: Color(0xFF6EC6FF),
+                size: 22,
+              ),
+            ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      RichText(
+                        textAlign: TextAlign.center,
+                        text:TextSpan(
                           children: [
-                            Text(
-                              "Vamos Começar!",
+                            TextSpan(
+                              text: "FOGO?\n",
+
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,
+                                fontSize: 42,
+                                fontWeight: FontWeight.w900,
+                                shadows: [
+                                  Shadow(
+                                    color: Colors.black26,
+                                    offset: Offset(2, 2),
+                                    blurRadius: 3,
+                                  ),
+                                ],
+                                foreground: ui.Paint()
+                                  ..shader = const LinearGradient(
+                                    colors: [
+                                      Color(0xFFFFC107),
+                                      Color(0xFFFF5722),
+                                    ],
+                                  ).createShader(
+                                    const Rect.fromLTWH(0, 0, 300, 70),
+                                  ),
                               ),
                             ),
-                            SizedBox(width: 10),
-                            Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 28),
+                            TextSpan(
+                              text: "NÃO!",
+
+                              style: TextStyle(
+                                fontSize: 38,
+                                fontWeight: FontWeight.w900,
+                                shadows: [
+                                  Shadow(
+                                    color: Colors.black26,
+                                    offset: Offset(2, 2),
+                                    blurRadius: 3,
+                                  ),
+                                ],
+                                foreground: Paint()
+                                  ..shader = const LinearGradient(
+                                    colors: [
+                                      Color(0xFF42A5F5),
+                                      Color(0xFF1565C0),
+                                    ],
+                                  ).createShader(
+                                    const Rect.fromLTWH(0, 0, 300, 70),
+                                  ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
-                    )
-                  ],
+                      const SizedBox(height: 10),
+
+                      // IMAGEM DO GOTINHO
+                      Image.asset(
+                        'assets/Gotinho.png',
+                        width: 280,
+                      ),
+
+                      const SizedBox(height: 8),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 60,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFF6EDB4D),
+                                Color(0xFF3FAE2A),
+                              ],
+                            ),
+
+                            borderRadius: BorderRadius.circular(40),
+
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.green.withOpacity(0.4),
+                                blurRadius: 12,
+                                offset: const Offset(0, 6),
+                              ),
+                            ],
+                          ),
+
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                  const MenuPrincipal(),
+                                ),
+                              );
+                            },
+
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                              elevation: 0,
+
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40),
+                              ),
+                            ),
+
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Vamos Começar!",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+
+                                SizedBox(width: 10),
+
+                                Icon(
+                                  Icons.arrow_forward_rounded,
+                                  color: Colors.white,
+                                  size: 28,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
         ),
       ),
     );
@@ -176,7 +249,7 @@ class MenuPrincipal extends StatelessWidget {
               //gotinho
               Image.asset(
                 'assets/gotinho3.png',
-                height: 180,
+                width: 180,
               ),
               const SizedBox(height: 10),
               const Text(
