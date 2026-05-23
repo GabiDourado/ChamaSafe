@@ -182,7 +182,7 @@ class HomePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Vamos Começar!",
+                                  "Vamos começar!",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 22,
@@ -266,7 +266,7 @@ class MenuPrincipal extends StatelessWidget {
               ),
               _botaoMenu(
                 context,
-                "Teste seus Conhecimentos",
+                "Teste seus conhecimentos",
                 Icons.quiz_rounded,
                 Colors.blue,
                 const Quiz(),

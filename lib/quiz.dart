@@ -19,7 +19,7 @@ class _QuizState extends State<Quiz> {
     {"pergunta": "O que devemos usar para proteger a pele do sol?", "opcoes": ["Sabonete", "Água", "Protetor solar", "Toalha"], "correta": 2},
     {"pergunta": "Onde não devemos mexer na cozinha?", "opcoes": ["Na geladeira", "No fogão quente", "Na mesa", "Na cadeira"], "correta": 1},
     {"pergunta": "O que pode causar queimadura elétrica?", "opcoes": ["Mexer em tomada sem proteção","Brincar na areia",  "Comer frutas", "Assistir TV"], "correta": 0},
-    {"pergunta": "O que fazer se você se queimar?", "opcoes": ["Colocar gelo direto", "Passar manteiga", "Ignorar", "Colocar a área em água fria"], "correta": 3},
+    {"pergunta": "O que fazer se você se queimar?", "opcoes": ["Colocar gelo direto", "Passar manteiga", "Ignorar", "Colocar a área em água corrente fresca"], "correta": 3},
     {"pergunta": "O que NÃO devemos passar na queimadura?", "opcoes": ["Água limpa", "Pomada indicada", "Pasta de dente", "Gaze"], "correta": 2},
     {"pergunta": "Brincar com fósforo é:", "opcoes": ["Perigoso","Seguro",  "Divertido sempre", "Sem problema"], "correta": 0},
     {"pergunta": "Quem devemos chamar se a queimadura for grave?", "opcoes": ["Um amigo", "Um adulto responsável", "Um colega", "Ninguém"], "correta": 1},

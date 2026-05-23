@@ -69,7 +69,7 @@ class _AprenderState extends State<Aprender> {
             const Divider(height: 30),
             itemTexto("• Queimaduras térmicas: Provocadas por fogo, vapor, objetos quentes ou pelo sol."),
             itemImagem('assets/sol_forte.png', largura: 100),
-            itemTexto("• Queimaduras químicas: Substâncias que queimam ao entrar em contato com a pele."),
+            itemTexto("• Queimaduras químicas: São causadas por produtos químicos que machucam a pele."),
             itemTexto("• Queimaduras elétricas: Causadas por descargas elétricas e fios desencapados."),
             const Divider(height: 30),
             itemTextoDestaque("Graus de Queimadura:"),
@@ -77,7 +77,7 @@ class _AprenderState extends State<Aprender> {
             itemImagem('assets/primeiro_grau.png', largura: 120),
             itemTexto("2 grau: Atinge camadas mais profundas. Destrói tecidos e pode causar bolhas e cicatrizes."),
             itemImagem('assets/segundo_grau.png', largura: 120),
-            itemTexto("3 grau: Atinge todas as camadas da pele e pode chegar ao osso."),
+            itemTexto("3 grau: É uma queimadura muito grave que machuca profundamente a pele."),
             itemImagem('assets/terceiro_grau.png', largura: 120),
           ],
         );
@@ -92,7 +92,7 @@ class _AprenderState extends State<Aprender> {
             itemTexto("• Deixe velas longe de tecidos e objetos inflamáveis."),
             itemTexto("• Fique longe de fósforos, álcool e produtos de limpeza."),
             itemImagem('assets/atencao.png', largura: 120),
-            itemTexto("• Não mexa in fios elétricos e não toque em tomadas."),
+            itemTexto("• Não mexa em fios elétricos e não toque em tomadas."),
             itemTexto("• Use protetor solar e roupas que protejam do sol."),
           ],
         );
@@ -117,9 +117,9 @@ class _AprenderState extends State<Aprender> {
           "O que fazer",
           [
             itemImagem('assets/primeiros_socorros.png', largura: 100),
-            itemTexto("1. Coloque a parte queimada em água corrente fria por 10 minutos."),
+            itemTexto("1. Coloque a parte queimada em água corrente fresca por 10 minutos."),
             itemImagem('assets/agua_fria.png', largura: 100),
-            itemTexto("2. Se houver sujeira no local, cubra com um pano limpo e úmido."),
+            itemTexto("2. Se houver sujeira no local, cubra com um pano limpo e úmido, sem apertar."),
             const Divider(height: 30),
             itemTextoDestaque("O que NUNCA fazer:"),
             itemImagem('assets/nao_faca_isso.png', largura: 120),

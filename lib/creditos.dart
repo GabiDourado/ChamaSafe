@@ -168,10 +168,12 @@ class Refs extends StatelessWidget {
   Future<void> abrirLink(String link) async {
     final Uri url = Uri.parse(link);
 
-    if (!await launchUrl(
-      url,
-      mode: LaunchMode.externalApplication, // <--- Força a abertura no navegador padrão do celular
-    )) {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(
+        url,
+        mode: LaunchMode.platformDefault,
+      );
+    } else {
       throw Exception('Não foi possível abrir o link');
     }
   }
