@@ -4,6 +4,19 @@ import 'package:url_launcher/url_launcher.dart';
 class MenuInfo extends StatelessWidget {
   const MenuInfo({super.key});
 
+  Future<void> abrirLink(String link) async {
+    final Uri url = Uri.parse(link);
+
+    if (await canLaunchUrl(url)) {
+      await launchUrl(
+        url,
+        mode: LaunchMode.platformDefault,
+      );
+    } else {
+      throw Exception('Não foi possível abrir o link');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +74,29 @@ class MenuInfo extends StatelessWidget {
                 Icons.library_books,
                 Colors.blue,
                 const Refs(),
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 60,
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      abrirLink('https://sites.google.com/view/chamasafe-politica');
+                    },
+                    icon: Icon(Icons.privacy_tip, color: Colors.white, size: 28),
+                    label: Text(
+                      "Política de Privacidade",
+                      style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

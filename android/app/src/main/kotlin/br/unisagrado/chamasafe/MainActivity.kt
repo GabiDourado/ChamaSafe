@@ -1,4 +1,4 @@
-package br.unisagrado.chama_safe
+package br.unisagrado.chamasafe
 
 import io.flutter.embedding.android.FlutterActivity
 
